@@ -116,7 +116,7 @@ location.href ="./otp.html";
 
 
 // otp
-$('#form2').on('submit', function (event) {
+$('#form').on('submit', function (event) {
 
  
   event.stopPropagation();
